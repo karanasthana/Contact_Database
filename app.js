@@ -23,6 +23,7 @@
   var stateToSave = state_id.value;
   var addressToSave = address_id.value;
   var timeToSave = new Date();
+  var photoToSave = fileButton.target.files(0);
   if(validatefunc(nameToSave,emailToSave,ageToSave,stateToSave,addressToSave))
   {
   console.log("I'll be saving "+nameToSave+", "+emailToSave+", "+ageToSave+", "+stateToSave+", "+addressToSave+" to the Firestore");
@@ -34,7 +35,8 @@
   age:ageToSave,
   state:stateToSave,
   address:addressToSave,
-  date:timeToSave
+  date:timeToSave,
+  displayPhoto:photoToSave
   }).then(function() {var fr = document.getElementById("frm");
   fr.reset();
   console.log("Contact saved!");

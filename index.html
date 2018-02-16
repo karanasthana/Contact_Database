@@ -67,11 +67,17 @@
   	</div>
   	<div class = "form-group">
   	<label for="photo_id">Photo:</label>
-  	<input type="img" name="display-picture" class = "form-control" id="photo_id" placeholder="Upload picture">  
+  	<input type="file" value="upload" class = "form-control" id="fileButton" placeholder="Upload picture">  
   	<br> 
   	</div>
   	<br> <br>
 	</form>
+	<script type="">
+		var fileButton = document.getElementById('fileButton');
+		fileButton.addEventListener('change',function(e){
+			console.log("Need to get this file!");
+		});
+	</script>
 
 	
 
