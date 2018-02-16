@@ -87,6 +87,10 @@ table,th,tr,td{
   	function createModal(data)
   	{
   		var nameToDisplay=data.name;
+  		var emailToDisplay=data.email;
+  		var ageToDisplay=data.age;
+  		var stateToDisplay=data.state;
+  		var addressToDisplay=data.address;
   		console.log(data.name+ "inside modal function!");
   		var html = '<div id="modalwindow" class="modal fade out container" style="display:block">';
   		html+= '<div class="modal-header" style="background-color:white;">';
@@ -94,8 +98,30 @@ table,th,tr,td{
   		html+= '<h4 style="color:blue">Details</h4>';
   		html+= '</div>';
   		html+= '<div class ="modal-body" style="background-color:white";>';
-  		html+= '<p>Name : </p>';
-  		html+= '<p>'+nameToDisplay+'</p>';
+  		html+= '<div class ="table-hover" style="background-color:white";>';
+  		html+= '<table name = "heading", class = "table table-hover",  id="myModalTable">'
+  		/*html+= '<tr><th style="font-size:100%",style="backgroundcolor:blue"> Name </th><td >'+ nameToDisplay +' </th></tr>'
+ 		html+= '<tr><th style="font-size:100%",style="backgroundcolor:blue"> Email </th><td >'+ emailToDisplay +' </th></tr>'
+ 		html+= '<tr><th style="font-size:100%",style="backgroundcolor:blue"> Age </th><td >'+ ageToDisplay +' </th></tr>'
+ 		html+= '<tr><th style="font-size:100%",style="backgroundcolor:blue"> State </th><td >'+ stateToDisplay +' </th></tr>'
+  		html+= '<tr><th style="font-size:100%",style="backgroundcolor:blue"> Address </th><td >'+ addressToDisplay +' </th></tr>'
+  		/*<tr>
+  			<th style="font-size:200%",style="backgroundcolor:blue"> State </th>
+  			<td > stateToDisplay </th>
+  		</tr>
+  		<tr>
+  			<th style="font-size:200%",style="backgroundcolor:blue"> Address </th>
+  			<td > addressToDisplay </th>
+  		</tr>
+  		</table> 
+  
+  		*/
+  		html+= '<p>Name    : '+nameToDisplay+'</p>';
+  		html+= '<p>email   : '+emailToDisplay+'</p>';
+  		html+= '<p>age     : '+ageToDisplay+'</p>';
+  		html+= '<p>state   : '+stateToDisplay+'</p>';
+  		html+= '<p>address : '+addressToDisplay+'</p>';
+  		html+= '</div>';
   		html+= '</div>';
   		html+= '</div>';
   		console.log("printing html = " + html);
