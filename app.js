@@ -35,7 +35,7 @@
   age:ageToSave,
   state:stateToSave,
   address:addressToSave,
-  date:timeToSave,
+  date:timeToSave,  
   displayPhoto:photoToSave
   }).then(function() {var fr = document.getElementById("frm");
   fr.reset();
@@ -148,8 +148,15 @@ else
             console.log("Incorrect Age!");
             alert("Please enter valid integer!");
       }
-    else{
+    if(address.length>0)
+    {
       console.log("Age validation passed!");
+      }
+      else
+      {
+        console.log("Address is empty");
+        alert("Please enter address");
+        return false;
       }
     }
     return true; 
