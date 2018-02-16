@@ -65,6 +65,8 @@ table,th,tr,td{
 				var name=(doc.data().name);
 				var email=(doc.data().email);
 				var fulldate = doc.data().date;
+				var offset = fulldate.getTimezoneOffset();
+				console.log(""+offset);
 				var hours = fulldate.getHours()+"";
 				if(hours.length==1)
 					hours="0"+hours
