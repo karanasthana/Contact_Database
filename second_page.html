@@ -58,7 +58,7 @@ table,th,tr,td{
 		const collectionRef = firestore.collection("samples/");
 		console.log(collectionRef);
 		var coll_docs = firestore.collection("samples");
-		var i=0;
+		var i=1;
 		var query = coll_docs.get().then(function(querySnapshot) {
 			querySnapshot.forEach(function(doc) {
 				console.log(doc.id + "--" + doc.data());
@@ -73,7 +73,7 @@ table,th,tr,td{
 					mins="0"+mins;
 				var timestamp = (/*fulldate+" "+*/fulldate.getDate()+"/"+(fulldate.getMonth()+1)+"/"+(fulldate.getFullYear())+" "+hours+":"+mins);
 				console.log(name+"        "+email+"        "+timestamp);
-					var row = table.insertRow(1);
+					var row = table.insertRow(i);
 					row.onclick= function() {
 						createModal(doc.data());
 					}

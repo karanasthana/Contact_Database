@@ -6,6 +6,8 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
 
 </head>
 <body>
@@ -24,9 +26,40 @@
   	<label for="age_id">Age:</label>
   	<input type="text" name="age" class = "form-control" id="age_id" placeholder="Enter Age">
   	</div>
+  	<script type="text/javascript">var sizeofDropDown = $(document).width();</script>
   	<div class = "form-group">
-  	<label for="state_id">State:</label>
-  	<input type="text" name="state" class = "form-control" id="state_id" placeholder="State to be entered">
+  	<label for="state_id" style="align:left">State:</label><br>
+  	<select class="js-example-basic-single" name="state" id="state_id" style="width:100%	">
+	<option value="Andhra Pradesh">Andhra Pradesh</option>
+  	<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+  	<option value="Assam">Assam</option>
+  	<option value="Bihar">Bihar</option>
+  	<option value="Chhatisgarh">Chhatisgarh</option>
+  	<option value="Goa">Goa</option>
+  	<option value="Gujarat">Gujarat</option>
+  	<option value="Haryana">Haryana</option>
+  	<option value="Himachal Pradesh">Himachal Pradesh</option>
+  	<option value="Jammu And Kashmir">Jammu And Kashmir</option>
+  	<option value="Jharkhand">Jharkhand</option>
+  	<option value="Karnataka">Karnataka</option>
+  	<option value="Kerala">Kerala</option>
+  	<option value="Madhya Pradesh">Madhya Pradesh</option>
+  	<option value="Maharashtra">Maharashtra</option>
+  	<option value="Manipur">Manipur</option>
+  	<option value="Meghalaya">Meghalaya</option>
+  	<option value="Mizoram">Mizoram</option>
+  	<option value="Nagaland">Nagaland</option>
+  	<option value="Odisha">Odisha</option>
+  	<option value="Punjab">Punjab</option>
+  	<option value="Rajasthana">Rajasthan</option>
+  	<option value="Sikkim">Sikkim</option>
+  	<option value="Tamil Nadu">Tamil Nadu</option>
+  	<option value="Telangana">Telangana</option>
+  	<option value="Tripura">Tripura</option>
+  	<option value="Uttar Pradesh">Uttar Pradesh</option>
+  	<option value="Uttarakhand">Uttarakhand</option>
+  	<option value="West Bengal">West Bengal</option>
+  	</select>
   	</div>
   	<div class = "form-group">
   	<label for="address_id">Address:</label>
@@ -39,6 +72,9 @@
   	</div>
   	<br> <br>
 	</form>
+
+	
+
 	<button id ="submit_id">Save</button>
 	<button id ="submit_another_id" class="pull-right">Save And Add Another</button>
 	<script src="./app.js"></script>
