@@ -64,7 +64,14 @@ table,th,tr,td{
 				console.log(doc.id + "--" + doc.data());
 				var name=(doc.data().name);
 				var email=(doc.data().email);
-				var timestamp = (doc.data().date);
+				var fulldate = doc.data().date;
+				var hours = fulldate.getHours()+"";
+				if(hours.length==1)
+					hours="0"+hours
+				var mins = fulldate.getMinutes()+"";
+				if(mins.length==1)
+					mins="0"+mins;
+				var timestamp = (/*fulldate+" "+*/fulldate.getDate()+"/"+(fulldate.getMonth()+1)+"/"+(fulldate.getFullYear())+" "+hours+":"+mins);
 				console.log(name+"        "+email+"        "+timestamp);
 					var row = table.insertRow(1);
 					row.onclick= function() {
@@ -91,6 +98,7 @@ table,th,tr,td{
   		var ageToDisplay=data.age;
   		var stateToDisplay=data.state;
   		var addressToDisplay=data.address;
+  		var dateToDisplay=data.date;
   		console.log(data.name+ "inside modal function!");
   		var html = '<div id="modalwindow" class="modal fade out container" style="display:block">';
   		html+= '<div class="modal-header" style="background-color:white;">';
@@ -121,6 +129,7 @@ table,th,tr,td{
   		html+= '<p>age     : '+ageToDisplay+'</p>';
   		html+= '<p>state   : '+stateToDisplay+'</p>';
   		html+= '<p>address : '+addressToDisplay+'</p>';
+  		html+= '<p>Date    : '+dateToDisplay+'</p>';
   		html+= '</div>';
   		html+= '</div>';
   		html+= '</div>';
