@@ -23,6 +23,8 @@
   var stateToSave = state_id.value;
   var addressToSave = address_id.value;
   var timeToSave = new Date();
+  if(validatefunc(nameToSave,emailToSave,ageToSave,stateToSave,addressToSave))
+  {
   console.log("I'll be saving "+nameToSave+", "+emailToSave+", "+ageToSave+", "+stateToSave+", "+addressToSave+" to the Firestore");
   var data_entry = "samples/"+nameToSave+"-"+emailToSave;
   const docRef = firestore.doc(data_entry)
@@ -37,7 +39,13 @@
   fr.reset();
   console.log("Contact saved!");
 });
+}
+else
+{
+}
 });
+
+
 
   saveButton.addEventListener("click",function(){
   var nameToSave = name_id.value;
@@ -47,6 +55,8 @@
   var stateToSave = state_id.value;
   var addressToSave = address_id.value;
   var timeToSave = new Date();
+  if(validatefunc(nameToSave,emailToSave,ageToSave,stateToSave,addressToSave))
+  {
   console.log("I'll be saving "+nameToSave+", "+emailToSave+", "+ageToSave+", "+stateToSave+", "+addressToSave+" to the Firestore");
   var data_entry = "samples/"+nameToSave+"-"+emailToSave;
   const docRef = firestore.doc(data_entry)
@@ -62,4 +72,83 @@
   }).catch(function (error) {
   console.log("Error! :",error);
   });
-  });
+  }
+  else
+  {
+  }
+});
+
+  function validatefunc(name,email,age,state,address){
+    if (name.length<10)
+    {
+      alert('Please enter name with length more than 10!');
+        return false;
+    }
+    else
+    if(!(/\w \w/.test(name)))
+    {
+        alert('Please enter name correctly!');
+        return false;
+    }
+    else
+    if(/\d/.test(name))
+    {
+        alert("Name cannot contain digits");
+        return false;
+    }
+
+    //checking conditions for email
+    var index_of_at = email.indexOf('@');
+    if(index_of_at == -1)
+    {
+        console.log("@ was not found!");
+        alert("Please enter a valid email address");
+        return false;
+    }
+    else
+    {
+            var before_at = email.substring(0,index_of_at);
+            var after_at =email.substring(index_of_at+1,email.length);
+            var exclaim = console.log(before_at.indexOf('!'));
+            var question = console.log(before_at.indexOf('?'));
+            var hyphen = console.log(before_at.indexOf('-'));
+            if(exclaim>-1 || question>-1 || hyphen>-1)
+            { 
+                console.log("Failed here-2")
+                alert("Please enter a valid email address");
+                return false;
+            }
+            else
+            {
+              console.log("@ was preswnt in email");
+                if((/(\w|\d|.)/).test(before_at))
+                {
+                   console.log("TEST PASSED AT THIS!!")    
+                } 
+                else
+                {
+                console.log("Failed here!");
+                alert("Please enter a valid email address");
+                return false;
+                }
+            }
+    }
+
+    // checking for valid age
+    if((/([^\d])/).test(age))
+    {
+      console.log("age shall only contain digits");
+      alert("age shall only contain digits");
+      return false;
+    }
+    else{
+    if(age<0 || age>100){
+            console.log("Incorrect Age!");
+            alert("Please enter valid integer!");
+      }
+    else{
+      console.log("Age validation passed!");
+      }
+    }
+    return true; 
+  }

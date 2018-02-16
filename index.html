@@ -9,38 +9,40 @@
 
 </head>
 <body>
+	<div class="container ">
 	<h1 style = "text-align : center;"> Enter Details </h1>
 	<form id="frm">
 	<div class = "form-group">
   	<label for="name_id">Name:  </label>
-  	<input type="text" name="name" class = "form-control" id="name_id" placeholder="Enter name"><br>
+  	<input type="text" name="name" class = "form-control" id="name_id" placeholder="Enter name">
   	</div>
   	<div class = "form-group">
   	<label for="email_id">Email:</label>
-  	<input type="email" name="email" class = "form-control" id="email_id"><br>
+  	<input type="email" name="email" class = "form-control" id="email_id" placeholder="Enter valid Email id">
   	</div>
   	<div class = "form-group">
   	<label for="age_id">Age:</label>
-  	<input type="text" name="age" class = "form-control" id="age_id"><br>
+  	<input type="text" name="age" class = "form-control" id="age_id" placeholder="Enter Age">
   	</div>
   	<div class = "form-group">
   	<label for="state_id">State:</label>
-  	<input type="text" name="state" class = "form-control" id="state_id"><br>
+  	<input type="text" name="state" class = "form-control" id="state_id" placeholder="State to be entered">
   	</div>
   	<div class = "form-group">
   	<label for="address_id">Address:</label>
-  	<input type="text" name="address" class = "form-control" id="address_id"><br>
+  	<input type="text" name="address" class = "form-control" id="address_id" placeholder="Enter Address">
   	</div>
   	<div class = "form-group">
   	<label for="photo_id">Photo:</label>
-  	<input type="img" name="display-picture" class = "form-control" id=photo_id>  
+  	<input type="img" name="display-picture" class = "form-control" id="photo_id" placeholder="Upload picture">  
   	<br> 
   	</div>
   	<br> <br>
 	</form>
 	<button id ="submit_id">Save</button>
-	<button id ="submit_another_id">Save And Add Another</button>
+	<button id ="submit_another_id" class="pull-right">Save And Add Another</button>
 	<script src="./app.js"></script>
+	</div>
 </body>
 
 </html>
